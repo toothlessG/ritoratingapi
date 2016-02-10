@@ -28,7 +28,7 @@ for game in jgr['games']:
 
 
 #get match stats
-Print("B1")
+print("B1")
 for matchid in matchids:
     print(matchid)
     matchr = requests.get('https://na.api.pvp.net/api/lol/na/v2.2/match/' + str(matchid) + '?api_key=28f2fa25-e664-4919-bd2e-2e61caf18c6f')
