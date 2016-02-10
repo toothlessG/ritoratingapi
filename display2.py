@@ -6,12 +6,12 @@ name = 'toothlessg'
 matchids = []
 
 #check for key
-def checkforkey(diction,key):
+def checkforkey(diction,key,default):
     if key in diction:
         return diction[key]
     else:
         #print("missing key")
-        return 0
+        return default
 
 #Get ID from name
 idr = requests.get('https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/'+name+'?api_key=28f2fa25-e664-4919-bd2e-2e61caf18c6f')
@@ -34,7 +34,7 @@ for matchid in matchids:
     matchr = requests.get('https://na.api.pvp.net/api/lol/na/v2.2/match/' + str(matchid) + '?api_key=28f2fa25-e664-4919-bd2e-2e61caf18c6f')
     jmr = json.loads(matchr.text)
 
-    mtime = jmr['matchDuration']
+    mtime = checkforkey(jmr,'matchDuration',40)
 
     print(round(mtime/60,2))
 
