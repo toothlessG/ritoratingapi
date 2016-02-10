@@ -6,7 +6,7 @@ name = 'toothlessg'
 matchids = []
 
 #check for key
-def checkforkey(diction,key,default):
+def checkforkey(diction,key,default=0):
     if key in diction:
         return diction[key]
     else:
