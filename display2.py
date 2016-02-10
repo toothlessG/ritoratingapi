@@ -1,7 +1,3 @@
-import requests
-import json
-import csv
-
 name = 'toothlessg'
 matchids = []
 
