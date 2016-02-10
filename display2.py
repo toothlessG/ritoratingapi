@@ -34,9 +34,10 @@ for matchid in matchids:
     matchr = requests.get('https://na.api.pvp.net/api/lol/na/v2.2/match/' + str(matchid) + '?api_key=28f2fa25-e664-4919-bd2e-2e61caf18c6f')
     jmr = json.loads(matchr.text)
 
-    mtime = checkforkey(jmr,'matchDuration',40)
+    mtime = checkforkey(jmr,'matchDuration',2400)
+    print("Time:" + round(mtime/60,2))
 
-    print(round(mtime/60,2))
+    
 
 
 
